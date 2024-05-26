@@ -1,0 +1,24 @@
+follow below steps to activate virtual env for this project
+    cd ..
+    .\myproject\Scripts\activate
+to start project
+    cd ecomweb
+    python ./manage.py runserver
+to migrate db
+    python ./manage.py migrate
+    python ./manage.py makemigrations
+to install a package
+    pip install PACKAGE_NAME
+static files
+    python manage.py collectstatic 
+create new app
+    python manage.py startapp APP_NAME
+
+git commands
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin <project url>
+git push -f origin master
+
+    

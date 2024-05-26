@@ -1,0 +1,83 @@
+{% load static %}
+<!-- ======= Header ======= -->
+<section id="topbar" class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- End Top Bar -->
+
+  <header id="header" class="header d-flex align-items-center">
+
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="{% url 'main_view' %}" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Ecomweb<span>.</span></h1>
+      </a>
+      <div class="input-group rounded">
+        <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="bi bi-search"></i>
+        </span>
+      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>{{user.username|default:'Guest'}}</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Orders</a></li>
+              <li><a href="#">Wishlist</a></li>
+              <li><a href="#">Help center</a></li>
+              <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                  <li><a href="{% url 'users-profile' %}">My Profile</a></li>
+                  <li><a href="#">Saved Cards</a></li>
+                  <li><a href="#">Saved Addresses</a></li>
+                  <li><a href="#">Orders</a></li>
+                  <li><a href="#">Wishlist</a></li>
+                </ul>
+              </li>
+              <li class="">
+                {% if user.is_authenticated %}
+                <li>
+                  <a href="#" 
+                    onClick="document.getElementById('logoutform').submit()">
+                    Sign Out
+                  </a>
+                </li>
+                <form id="logoutform" method="POST" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <input type="hidden">
+                </form>
+                {% else %}
+                <li><a href="{% url 'login' %}" role="button">Sign In</a></li>
+
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
+    </div>
+
+  </header><!-- End Header -->
+  <!-- End Header -->
