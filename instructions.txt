@@ -23,6 +23,7 @@ git pull
 git remote add origin <project url>
 git push -f origin <branch name>
 git rev-parse --abbrev-ref HEAD -- check current active branch
-
+git branch <branch name> create new branch
+git checkout <branch name> switch branch
 
     

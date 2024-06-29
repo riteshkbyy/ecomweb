@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+
+{% extends "index.html" %}
+
+
+{% block head %}
 	<meta charset="UTF-8">
 	<title>{{ product.name }} - Product Detail</title>
-</head>
-<body>
+{% endblock head %}
+
+{% block content %}
 	<h1>{{ product.name }} - Product Detail</h1>
 	
 	<div>
@@ -15,5 +18,4 @@
 	<p>Price: ${{ product.price }}</p>
 	
 	<a href="{% url 'product_list' %}">Back to Product List</a>
-</body>
-</html>
+{% endblock content %}

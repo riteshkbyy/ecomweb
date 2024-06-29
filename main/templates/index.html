@@ -3,6 +3,9 @@
 <html lang="en">
 <head>
 {% include "head.html" %}
+{% block head %}
+<title>{{pagetitle}}</title>
+{% endblock %}
 </head>
 <body>
     {% include "navbar.html" %}
