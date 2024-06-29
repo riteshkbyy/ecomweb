@@ -1,6 +1,6 @@
 follow below steps to activate virtual env for this project
     cd ..
-    .\myproject\Scripts\activate
+    .\venv\Scripts\activate
 to start project
     cd ecomweb
     python ./manage.py runserver
@@ -15,10 +15,14 @@ create new app
     python manage.py startapp APP_NAME
 
 git commands
+
 git init
-git add .
-git commit -m "Initial commit"
+git add . -- add all new and modified files to staging area to be commited to repository
+git commit -m "Initial commit" -- create snapshot of changes made
+git pull
 git remote add origin <project url>
-git push -f origin master
+git push -f origin <branch name>
+git rev-parse --abbrev-ref HEAD -- check current active branch
+
 
     
