@@ -8,6 +8,8 @@
 {% endblock head %}
 
 {% block content %}
+<div class="container">
+
 	<h1>{{ product.name }} - Product Detail</h1>
 	
 	<div>
@@ -18,4 +20,5 @@
 	<p>Price: ${{ product.price }}</p>
 	
 	<a href="{% url 'product_list' %}">Back to Product List</a>
+</div>
 {% endblock content %}
