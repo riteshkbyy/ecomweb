@@ -33,7 +33,7 @@
 			<a href="{% url 'product_detail' product.pk %}">
 			<div class="card bg-dark text-white" style="width: 15em; height: 20em;">
 				
-				<img class="card-img" src="{{ product.image.url }}" alt="Product image">
+				<img class="card-img" src="{{ product.thumbnail.url }}" alt="Product image">
 				
 				<div class="card-img-overlay d-flex flex-column justify-content-end">
 					<a href="#" class="bi bi-heart text-right position-absolute top-0 end-0 h2" data-tip="Add to Wishlist" style="top: 0%;"></a>
@@ -42,29 +42,11 @@
 					<a href="#" class="bi bi-cart-plus text-right position-absolute bottom-0 end-0 h2" data-tip="Add to cart"></a>
 					<a href="{% url 'product_detail' product.pk %}" class="bi bi-info-circle text-right position-absolute top-0 start-0 h1" data-tip="Add to cart"></a>
 
-					<!-- Add other relevant information or buttons here -->
 				</div>
 			</div>
 			</a>
 		</div>
-			<!-- <div class="col-md-3 col-sm-6">
-				<div class="product-grid">
-					<div class="product-image">
-						 <div class="images">
-							<a href="{% url 'product_detail' product.pk %}" class="image">
-								<img class="card-img-top rounded" src="{{ product.image.url }}" alt="{{ product.name }}" width="500rem" height="200rem">
-								<a href="#" class="bi bi-heart" data-tip="Add to Wishlist"></a>
-								<a href="#" class="bi bi-cart" data-tip="Add to cart"></a>
-							</a>
-							
-						</div>
-					</div>
-					<div class="product-content">
-						<h3 class="title"><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h3>
-						<div class="">₹{{product.price}}</div>
-					</div>
-				</div>
-			</div> -->
+			
 		{% endfor %}
 		</div>
 	</div>
